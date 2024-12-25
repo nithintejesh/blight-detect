@@ -9,7 +9,7 @@ export default function Workflow() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const threshold = window.innerHeight * 0.3; // Show after 30% of viewport height
+      const threshold = window.innerHeight * 0.3;
       setIsVisible(scrollPosition > threshold);
     };
 
@@ -39,7 +39,7 @@ export default function Workflow() {
   ];
 
   return (
-    <div className="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800/50 dark:to-gray-900">
+    <div className={`py-16 ${isVisible ? 'bg-gradient-to-b from-gray-50 to-white dark:from-gray-800/50 dark:to-gray-900' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`transition-all duration-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="text-center mb-16">
